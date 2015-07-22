@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Develop-specification-documents by RedrockTeam</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Develop-specification-documents</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/RedrockTeam/Develop-specification-documents" class="btn">View on GitHub</a>
+      <a href="https://github.com/RedrockTeam/Develop-specification-documents/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/RedrockTeam/Develop-specification-documents/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="后端开发规范" class="anchor" href="#%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83" aria-hidden="true"><span class="octicon octicon-link"></span></a>后端开发规范</h1>
+
+<h2>
+<a id="目录结构" class="anchor" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84" aria-hidden="true"><span class="octicon octicon-link"></span></a>目录结构</h2>
+
+<ol>
+<li><p>所有路径一律为相对路径, 且由框架自带函数或变量生成</p></li>
+<li><p>用户上传的文件, 网站的各种css, js, font/iconfont, 图片等公共资源放在框架中public区域下</p></li>
+<li><p>禁止改动框架核心目录结构以及变更名字</p></li>
+</ol>
+
+<h2>
+<a id="代码" class="anchor" href="#%E4%BB%A3%E7%A0%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>代码</h2>
+
+<h3>
+<a id="编码" class="anchor" href="#%E7%BC%96%E7%A0%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>编码</h3>
+
+<ol>
+<li>PHP代码必须只使用不带BOM的UTF-8</li>
+</ol>
+
+<h3>
+<a id="注释" class="anchor" href="#%E6%B3%A8%E9%87%8A" aria-hidden="true"><span class="octicon octicon-link"></span></a>注释 </h3>
+
+<p>1. 单行注释：在语句结尾用双反斜杠<code>//</code>注释 </p>
+
+<p>2. 多行注释：多行注释以<code>/*</code>或<code>/**</code>符号开头，以<code>*/ </code>符号作为注释结束符</p>
+
+<p>3. <code>if</code>, <code>else</code>语句注释写在<code>{</code>之后</p>
+
+<p>4. 方法注释写在方法之前, 遵守<code>PHPDOC</code>标准</p>
+
+<p>5. 属性注释类同方法注释</p>
+
+<p>6. 类注释类同方法注释</p>
+
+<h3>
+<a id="命名规则" class="anchor" href="#%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>命名规则</h3>
+
+<ol>
+<li><p>统一使用Camel命名法和下划线命名(除类名首字母大写)</p></li>
+<li><p>采用英文单词或其组合，便于记忆和阅读，切忌使用汉语拼音来命名</p></li>
+<li><p>变量名使用全名, 不可使用单字母(除循环迭代变量)</p></li>
+<li><p>常量名全部使用大写字母和下滑线组成,常量的名称中不允许出现小写字母，可使用分隔符作为下划线</p></li>
+</ol>
+
+<h3>
+<a id="书写规则" class="anchor" href="#%E4%B9%A6%E5%86%99%E8%A7%84%E5%88%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>书写规则</h3>
+
+<ol>
+<li>
+<p>文件 </p>
+
+<ul>
+<li><p>所有的PHP文件必须使用<code>LF</code>作为行结束符, 大多数IDE自动转换</p></li>
+<li><p>所有PHP文件必须以一个空行结束</p></li>
+<li><p>纯PHP代码的文件关闭标签<code>?&gt;</code>必须省略 </p></li>
+</ul>
+</li>
+<li>
+<p>行</p>
+
+<ul>
+<li><p>行长度不可有硬限制</p></li>
+<li><p>行实际长度不应超过80个字符, 较长的行应当被拆分成多个不超过80个字符的后续行</p></li>
+<li><p>空行可以用来改善可读性和区分相关的代码块</p></li>
+<li><p>一行不应多于一个语句</p></li>
+</ul>
+</li>
+<li>
+<p>控制结构 </p>
+
+<ul>
+<li><p>控制结构关键词之后必须有一个空格 </p></li>
+<li><p>左括号之后不可有空格 </p></li>
+<li><p>右括号之前不可有空格 </p></li>
+<li><p>在右括号和左花括号之间必须有一个空格 </p></li>
+<li><p>代码主体必须有一次缩进 </p></li>
+<li><p>右花括号必须主体的下一行</p></li>
+<li><p>每个结构的主体必须被括在花括号里</p></li>
+<li><p>缩进使用四个<code>space</code>(软tab) </p></li>
+</ul>
+</li>
+<li>
+<p>运算符</p>
+
+<ul>
+<li>每个运算符与两边参与运算的值或表达式中间要有一个空格</li>
+</ul>
+</li>
+<li>
+<p>引号</p>
+
+<ul>
+<li>没有变量的场合禁止使用双引号, 优先使用单引号</li>
+</ul>
+</li>
+<li>
+<p>关键词</p>
+
+<ul>
+<li><p>PHP常量true, false和null必须使用小写</p></li>
+<li><p>禁止在变量命名使用关键字</p></li>
+</ul>
+</li>
+</ol>
+
+<h2>
+<a id="数据库" class="anchor" href="#%E6%95%B0%E6%8D%AE%E5%BA%93" aria-hidden="true"><span class="octicon octicon-link"></span></a>数据库</h2>
+
+<ol>
+<li><p>兼顾性能的同时尽量遵守范式</p></li>
+<li><p>记录禁止硬删除, 统一使用软删除</p></li>
+<li><p>预留访问量统计表(访问量精确到每个页面)</p></li>
+<li><p>原则上每张表须有一个主键</p></li>
+</ol>
+
+<h2>
+<a id="合作开发" class="anchor" href="#%E5%90%88%E4%BD%9C%E5%BC%80%E5%8F%91" aria-hidden="true"><span class="octicon octicon-link"></span></a>合作开发</h2>
+
+<ol>
+<li><p>开发使用git作为版本管理器, 托管平台可使用<a href="https://github.com" title="https://github.com">Github</a>或<a href="http://git.oschina.net/" title="http://git.oschina.net/">Oschina</a></p></li>
+<li><p>项目开始前需初始化<code>.gitignore</code>文件, 忽略包括但不限于如<code>.idea/</code>, <code>*/config.php</code>, <code>public/uploads/*</code>, <code>.DS_store</code>等文件</p></li>
+<li><p>每次commit需附带更改内容注释</p></li>
+<li><p>项目出现冲突需解决冲突后才能提交, 禁止强行push</p></li>
+</ol>
+
+<h2>
+<a id="接口规范" class="anchor" href="#%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83" aria-hidden="true"><span class="octicon octicon-link"></span></a>接口规范</h2>
+
+<ol>
+<li><p>需要有接口文档</p></li>
+<li><p>接口文档需有<code>请求接口</code>, <code>请求数据</code>, <code>返回数据</code>, 对每条数据的注释说明</p></li>
+<li><p>规定状态码</p></li>
+<li>
+<p>返回数据统一按照:</p>
+
+<pre><code>            [
+                "data":"",//数据区域
+                "info":"",//状态信息
+                "status":""//返回状态码
+            ] 
+</code></pre>
+</li>
+</ol>
+
+<h2>
+<a id="部署" class="anchor" href="#%E9%83%A8%E7%BD%B2" aria-hidden="true"><span class="octicon octicon-link"></span></a>部署</h2>
+
+<ol>
+<li>数据库账号密码禁止上传代码托管平台</li>
+</ol>
+
+<h2>
+<a id="开发文档" class="anchor" href="#%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3" aria-hidden="true"><span class="octicon octicon-link"></span></a>开发文档</h2>
+
+<ol>
+<li>
+<p>需要有开发文档和数据字典</p>
+
+<h2>
+<a id="其他" class="anchor" href="#%E5%85%B6%E4%BB%96" aria-hidden="true"><span class="octicon octicon-link"></span></a>其他</h2>
+</li>
+<li><p>版权声明</p></li>
+<li><p>开源协议</p></li>
+<li><p>广告位 </p></li>
+</ol>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/RedrockTeam/Develop-specification-documents">Develop-specification-documents</a> is maintained by <a href="https://github.com/RedrockTeam">RedrockTeam</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
